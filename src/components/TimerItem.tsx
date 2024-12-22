@@ -23,24 +23,30 @@ export const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
   useEffect(() => {
     if (timer.isRunning) {
       intervalRef.current = window.setInterval(() => {
-        updateTimer(); //removed params
-        
+        updateTimer(); // Removed params
+
         if (timer.remainingTime <= 1 && !hasEndedRef.current) {
           hasEndedRef.current = true;
+
           timerAudio.play().catch(console.error);
-          
+
           toast.success(`Timer "${timer.title}" has ended!`, {
             duration: 5000,
             action: {
               label: 'Dismiss',
-              onClick: timerAudio.stop,
+              onClick: () => {
+                timerAudio.stop(); // Stop audio when toast is dismissed
+              },
             },
+            onAutoClose:()=>timerAudio.stop()
           });
         }
       }, 1000);
     }
 
-    return () => clearInterval(intervalRef.current!);
+    return () => {
+      clearInterval(intervalRef.current!);
+    };
   }, [timer.isRunning, timer.id, timer.remainingTime, timer.title, timerAudio, updateTimer]);
 
   const handleRestart = () => {
@@ -74,7 +80,7 @@ export const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
             />
           </svg>
         </div>
-        
+
         <div className="relative">
           <div className="flex justify-between items-start mb-4">
             <div>
@@ -109,11 +115,11 @@ export const TimerItem: React.FC<TimerItemProps> = ({ timer }) => {
             <div className="text-4xl font-mono font-bold text-gray-800 mb-4">
               {formatTime(timer.remainingTime)}
             </div>
-            
+
             <TimerProgress
               progress={(timer.remainingTime / timer.duration) * 100}
             />
-            
+
             <TimerControls
               isRunning={timer.isRunning}
               remainingTime={timer.remainingTime}
