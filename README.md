@@ -13,8 +13,6 @@ This is a React-based timer management application that allows users to add, edi
 
 ---
 
-## **Steps to Complete**
-
 1. **Features**
 
 - Add, edit, and delete timers.
