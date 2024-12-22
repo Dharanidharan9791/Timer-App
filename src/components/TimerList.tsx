@@ -9,7 +9,7 @@ export const TimerList: React.FC = () => {
   return (
     <div className="space-y-4 min-h-[400px]">
       {timers.length === 0 ? (
-        <div className="h-[400px] flex flex-col items-center justify-center">
+        <div className="h-[400px] flex flex-col items-center justify-center mt-8">
           <EmptyState />
           <p className="text-center text-gray-500 text-xl font-medium">
             No timers yet. Add one to get started!
