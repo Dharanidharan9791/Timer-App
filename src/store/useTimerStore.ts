@@ -26,12 +26,13 @@ const timerSlice = createSlice({
         timer.isRunning = !timer.isRunning;
       }
     },
-    updateTimer: (state, action) => {
-      const timer = state.timers.find(timer => timer.id === action.payload);
-      if (timer && timer.isRunning) {
-        timer.remainingTime -= 1;
-        timer.isRunning = timer.remainingTime > 0;
-      }
+    updateTimer: (state) => { //instead of matching the payload which results only Item at a time now maps every timer which is running 
+      state.timers = state.timers.map(timer => {   //mapps all the elements in the state
+        if (timer.isRunning && timer.remainingTime > 0) {  //checks whether the item is running and completed
+          return { ...timer, remainingTime: timer.remainingTime - 1 }; //returns the new 1 second reduced value
+        }
+        return timer; //returns the time item
+      });
     },
     restartTimer: (state, action) => {
       const timer = state.timers.find(timer => timer.id === action.payload);
@@ -75,7 +76,7 @@ export const useTimerStore = () => {
     addTimer: (timer: Omit<Timer, 'id' | 'createdAt'>) => dispatch(addTimer(timer)),
     deleteTimer: (id: string) => dispatch(deleteTimer(id)),
     toggleTimer: (id: string) => dispatch(toggleTimer(id)),
-    updateTimer: (id: string) => dispatch(updateTimer(id)),
+    updateTimer: () => dispatch(updateTimer()), //removed params
     restartTimer: (id: string) => dispatch(restartTimer(id)),
     editTimer: (id: string, updates: Partial<Timer>) => dispatch(editTimer({ id, updates })),
   };
