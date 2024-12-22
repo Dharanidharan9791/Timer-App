@@ -1,11 +1,8 @@
-# Timer App Assignment
+# Timer App 
 
-Welcome to the Timer App Assignment! This project is designed to evaluate your skills in React development, focusing on **UI implementation**, **code quality**, **state management**, and **best practices**. The project uses **React**, **Vite**, **Tailwind CSS**, and **Vitest** for testing.
 
----
-
-## **Objective**
-Your task is to improve and enhance an existing Timer App based on the following requirements. The app currently has a partially implemented timer system, and your goal is to address the listed issues and extend its functionality.
+## **Overview**
+This is a React-based timer management application that allows users to add, edit, and delete timers. The application uses Redux for state management and persists timer data in localStorage to maintain state across page refreshes.
 
 ---
 
@@ -18,18 +15,13 @@ Your task is to improve and enhance an existing Timer App based on the following
 
 ## **Steps to Complete**
 
-1. **Fork or Clone the Repository**
-   - Fork or clone the repository to your local machine.
-   - Set up the project using the provided instructions.
+1. **Features**
 
-2. **Complete the Following Tasks:**
+- Add, edit, and delete timers.
 
-   1. **Match the UI:**
-      - Ensure the app's UI matches the given **screenshots**.
-      - <img width="250" alt="Screenshot 2024-12-03 at 8 30 53 PM" src="https://github.com/user-attachments/assets/59782304-c254-4d87-9fac-7f92c15bbc6f">
-      - <img width="250" alt="Screenshot 2024-12-03 at 3 29 25 PM" src="https://github.com/user-attachments/assets/9bb429ff-cd78-4411-b222-9d947c3ae79b">
-      - <img width="250" alt="Screenshot 2024-12-03 at 8 21 04 PM" src="https://github.com/user-attachments/assets/a26e8ec7-7e00-4964-8f61-651945f4bbd1">
-      - <img width="250" alt="Screenshot 2024-12-03 at 8 21 30 PM" src="https://github.com/user-attachments/assets/a513a462-540f-45e7-8ac0-0890995ec82d">
+- Form validation with error snack bars for invalid submissions.
+
+-  Timers are persisted in localStorage to prevent loss of data on page refresh.
 
 
    2. **Simultaneous Timers:**
@@ -67,11 +59,11 @@ Your task is to improve and enhance an existing Timer App based on the following
 
 ---
 
-## **Project Setup**
+## **Installation**
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/CW-Codewalnut/timer.git
+   git clone https://github.com/Dharanidharan9791/Timer-App.git
    ```
 
 2. Install dependencies:  
@@ -91,54 +83,34 @@ Your task is to improve and enhance an existing Timer App based on the following
 
 ---
 
-## **Evaluation Criteria**
+## **Key Enhancements**
 
-You will be evaluated on the following points:
 
-1. **UI Matching:**
-   - The app's UI should match the provided screenshots.
+1. **Validation Snack Bars:**
+   - Displays error messages when forms are submitted with invalid data.
 
-2. **Code Quality:**
-   - Clean, modular, and readable code.
-   - Avoid code duplication and ensure reusable components are implemented.
+- Responsive placement of snack bars for better UX on different devices..
 
-3. **Functionality:**
-   - Simultaneous timers, snack bar notifications, and localStorage persistence should work seamlessly.
+2. **Timer Persistence:**
+ - Timers are saved to localStorage whenever they are added, edited, or deleted.
 
-4. **State Management:**
-   - Effective use of React hooks or Context API for managing state.
+- useTimerStore ensures timers are loaded from localStorage on app initialization.
 
-5. **Testing:**
-   - Comprehensive unit and component tests, especially for validation logic and reusable components.
+3. **Simultaneous Timer:**
+   - Simultaneous timers allows to run multiple timers at a time.
 
-6. **Error Handling:**
-   - Resolve the existing snack bar console error and provide meaningful feedback to users for invalid forms.
+4. **Reusable Components:**
+   - AddTimer and EditTimer are put together as a reusable component.
 
-7. **Responsiveness:**
-   - Snack bar placement should adapt based on device type (desktop vs. mobile).
+5. **Error Handling:**
+   - Resolved the existing snack bar console error and provides meaningful feedback to users for invalid forms.
 
-8. **Commit Messages:**
-   - Follow **conventional commit standards** (e.g., `feat:`, `fix:`, `refactor:`).
 
----
-
-## **Deliverables**
-
-1. A **GitHub repository link** to your completed project (forked from the original repo).  
-2. Include a `README.md` describing:  
-   - Steps to run your project.  
-   - Any additional changes or enhancements you made.  
-
----
-
-## **Time Constraint**
-
-You are expected to complete this assignment in **4 hours** of focused effort.  
-
----
 
 ## **Contact**
 
-If you have any questions or issues, feel free to reach out via the provided contact channels in the repository.
+For any questions or issues, feel free to contact the maintainer:
 
-Good luck! 🚀
+Email: dharanidharan3003@gmail..com
+
+GitHub:  https://github.com/Dharanidharan9791
